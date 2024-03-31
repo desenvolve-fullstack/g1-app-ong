@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("styles/header.css");
+@import url("styles/cadastro-de-produtos.css");
+
+:root {
+    --cor-azul-dark: #11315A;
+    --cor-azul-dark-secondary: #135095;
+    --cor-azul-primaria: #009EDD;
+    --cor-laranja: #FF8400;
+    --cor-laranja-opacity: rgb(255 132 0 / 5%);
+    --cor-branco-extra-light: #F6FAFE;
+    --cor-branco-light: #EDFAFF;
+    --cor-verde-sucess: #00C800;
+    --cor-amarelo-atencao: #EAE10B;
+    --cor-vermelho-erro: #C92424;
+    --cor-de-fundo: #F6F6F6;
+    --cor-de-fundo-input: #F8F8F8;
+    --cor-da-borda-input: #E0E0E0;
+    --font-principal: 'Poppins';
+
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--font-principal);
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+
+}
+
+.container__texto-pag-principal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 10% 5%;
+    
+}
+
+.titulo__ong {
+    color: var(--cor-azul-primaria);
+    font-size: 3em;
+    font-weight: 500;
+    padding: 0 2em;
+    margin-top: 2em;
+    margin-bottom: 1.3em;
+}
+
+.subtitulo__ong {
+    color: var(--cor-azul-dark);
+    font-size: 2em;
+    font-weight: 400;
+    margin: 1em 0;
+    width: 80%;
+}
+
+.texto__ong {
+    color: var(--cor-azul-dark-secondary);
+    -webkit-margin-before: 1em;
+    line-height: 1.2;
+    font-size: 1.5em;
+    font-weight: 300;
+    padding-right: 25% ;
+}

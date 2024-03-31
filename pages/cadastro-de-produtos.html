@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Cadastro de produtos</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <div class="container">
+            <input type="checkbox" id="menu-index" class="container__botao">
+            <label for="menu-index" class="opcoes__rotulo">
+                <a href="../index.html" class="lista-menu__link"><img src="../img/logo.svg" alt="Logo BotiOngs"></a>
+            </label>
+
+        </div>
+        <ul class="opcoes">
+            <input type="checkbox" id="opcoes__pedidos" class="opcoes__botao__pedidos">
+            <label for="opcoes__pedidos" class="opcoes__rotulo">
+                <li class="opcoes__item__pedidos">Pedidos</li>
+            </label>
+            <ul class="lista-menu-pedidos">
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Lista de pedidos</a>
+                </li>
+
+            </ul>
+
+            <input type="checkbox" id="opcoes__ongs" class="opcoes__botao__ongs">
+            <label for="opcoes__ongs" class="opcoes__rotulo">
+                <li class="opcoes__item__ongs">Ongs</li>
+            </label>
+            <ul class="lista-menu-ongs">
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Cadastro de ONGs</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Lista de ONGs</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Registro de doação</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Estoque</a>
+                </li>
+            </ul>
+
+            <input type="checkbox" id="opcoes__produtos" class="opcoes__botao__produtos">
+            <label for="opcoes__produtos" class="opcoes__rotulo">
+                <li class="opcoes__item__produtos">Produtos</li>
+            </label>
+            <ul class="lista-menu-produtos">
+                <li class="lista-menu__item">
+                    <a href="cadastro-de-produtos.html" class="lista-menu__link">Cadastro de produtos</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Produtos cadastrados</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Registro de doação</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">Estoque</a>
+                </li>
+            </ul>
+
+        </ul>
+
+
+    </header>
+
+    <section>
+        <div class="container__texto-pag-principal">
+            <h1 class="titulo__ong">CADASTRO DE PRODUTOS</h1>
+            <p class="texto__ong">Esta é a sessão de cadastro de alimentos! Selecione nos campos abaixo a opção e a
+                quantidade desejada.</p>
+            <div class="container__cadastro">
+                <p class="container__cadastro__barra">Alimento</p>
+                <p class="container__cadastro__barra">Unidade de medida</p>
+            </div>
+            <div class="container__cadastro-alimento">
+                
+                <input type="checkbox" id="adicao" class="container__adicao">
+                <input type="checkbox" id="opcoes__cadastrar" class="container__adicao">
+
+                <div class="container__cadastro-alimento-adicionado">
+                    <div class="input-oculto">
+                        <input type="text" id="produtoInput" placeholder="Nome do produto" class="input-produto">
+                        <input type="text" id="unidadeInput" placeholder="Unidade de Medida" class="input-un-de-medida">
+                    </div>
+                    <div class="checkbox-option">
+                        <select id="alimento" name="alimento-lista" form="un-de-medida-form" class="input-produto">
+                            <option value="">Selecione um alimento</option>
+                        </select>
+                        <select id="un-de-medida" name="un-de-medida-lista" form="un-de-medida-form" class="input-un-de-medida">
+                            <option value="">Unidade de medida</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="adicao" class="adicao__item">+</label>
+                
+                <label for="opcoes__cadastrar" class="container__cadastro">
+                    <a onclick="CadastrarProduto()" class="botao-cadastrar">Cadastrar produto</a>
+                </label>
+            </div>
+
+        </div>
+    </section>
+    <script>
+
+        function CadastrarProduto() {
+            var produtoInput = document.getElementById("produtoInput").value;
+            var unidadeInput = document.getElementById("unidadeInput").value;
+
+            if (produtoInput.trim() !== "" && unidadeInput.trim() !== "") {
+                var selectAlimento = document.getElementById("alimento");
+                var option = document.createElement("option");
+                option.text = produtoInput;
+                option.value = produtoInput;
+                selectAlimento.add(option);
+
+                var selectUnidade = document.getElementById("un-de-medida");
+                var optionUnidade = document.createElement("option");
+                optionUnidade.text = unidadeInput;
+                optionUnidade.value = unidadeInput;
+                selectUnidade.add(optionUnidade);
+                LimparFormulario()
+            }
+        }
+        function LimparFormulario() {
+        document.getElementById("produtoInput").value = "";
+        document.getElementById("unidadeInput").value = "";
+        }
+
+    </script>
+</body>
+
+</html>
