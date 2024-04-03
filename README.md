@@ -22,4 +22,4 @@ Criar uma API RESTful e Frontend para:
 - Efetue a entrega de um pedido, fazendo a baixa das quantidades no estoque e registrando a entrega.
 
 ### Arquitetura
-![Diagrama](./docs/ong-arch.jpg)
+![Diagrama](./docs/Desenvolve-Projeto-Ong.png)
