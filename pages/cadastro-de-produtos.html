@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../styles.css">
+    <script src="./../script.js" defer></script>
     <title>Cadastro de produtos</title>
 </head>
 
@@ -105,39 +106,14 @@
                 <label for="adicao" class="adicao__item">+</label>
                 
                 <label for="opcoes__cadastrar" class="container__cadastro">
-                    <a onclick="CadastrarProduto()" class="botao-cadastrar">Cadastrar produto</a>
+                    <a onclick="CadastrarProduto() " class="botao-cadastrar">Cadastrar produto</a>
                 </label>
             </div>
 
         </div>
     </section>
-    <script>
 
-        function CadastrarProduto() {
-            var produtoInput = document.getElementById("produtoInput").value;
-            var unidadeInput = document.getElementById("unidadeInput").value;
-
-            if (produtoInput.trim() !== "" && unidadeInput.trim() !== "") {
-                var selectAlimento = document.getElementById("alimento");
-                var option = document.createElement("option");
-                option.text = produtoInput;
-                option.value = produtoInput;
-                selectAlimento.add(option);
-
-                var selectUnidade = document.getElementById("un-de-medida");
-                var optionUnidade = document.createElement("option");
-                optionUnidade.text = unidadeInput;
-                optionUnidade.value = unidadeInput;
-                selectUnidade.add(optionUnidade);
-                LimparFormulario()
-            }
-        }
-        function LimparFormulario() {
-        document.getElementById("produtoInput").value = "";
-        document.getElementById("unidadeInput").value = "";
-        }
-
-    </script>
 </body>
 
 </html>
+
