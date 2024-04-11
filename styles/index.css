@@ -1,0 +1,79 @@
+ 
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 125vh; /* Altere para um valor que atenda às suas necessidades */
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+ .container__texto-pag-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.titulo__ong {
+    color: var(--cor-azul-primaria);
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.subtitulo__ong {
+    color: var(--cor-azul-dark);
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.texto__ong {
+    color: var(--cor-azul-dark-secondary);
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+
+
+/* Estilos para o conteúdo principal (.main) no mobile */
+@media (max-width: 767px) {
+    .sidebar {
+        width: 100%; /* Define a largura como 100% */
+    }
+    .main {
+        min-height: 130vh; /* Ajusta a altura mínima para ocupar toda a tela */
+    }
+
+    .container__texto-pag-principal {
+        padding: 2%; /* Reduz o preenchimento interno */
+    }
+
+    .titulo__ong {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+        margin-bottom: 0.5em; /* Ajusta a margem inferior */
+    }
+
+    .subtitulo__ong {
+        font-size: 1.2em; /* Reduz o tamanho do subtítulo */
+        margin-bottom: 0.5em; /* Ajusta a margem inferior */
+    }
+
+    .texto__ong {
+        font-size: 0.9em; /* Reduz o tamanho do texto */
+        margin-bottom: 0.5em; /* Ajusta a margem inferior */
+    }
+
+   
+}

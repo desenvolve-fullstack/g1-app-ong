@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+       <title>Cadastro ONGS</title>
+</head>
+
+<body>
+    <div id="header-container"></div> <!-- Container para o cabeçalho -->
+
+    <main class="container-ongs flex flex--column flex--center">
+       
+        
+        <div class="conteudo">
+            <h2 class="h2-c">CADASTRO DE  ONG</h2>
+           
+        </div>
+        <div id="search-container"></div><!--barra pesquisa-->
+        
+        <div class="formulario-wrapper">
+         
+            <form id="form-cadastro" action="/submit_ong" method="POST" onsubmit="return validarFormulario()">
+                <div class="input-wrapper">
+                    <label for="nome">Nome</label>
+                     <!--todo-->
+                    <label for="nome" class="icon"><i class="fas fa-user"></i></label>
+                    <input id="input-ongs" type="text" id="nome" name="nome" placeholder="Digite o nome da ONG" required class="hide-placeholder">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="cnpj">CNPJ</label>
+                    <label for="cnpj" class="icon"><i class="fas fa-id-card"></i></label>
+                    <input id="input-ongs" type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required class="hide-placeholder" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}" title="Digite um CNPJ válido (00.000.000/0000-00)">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="email">Email</label>
+                    <label for="email" class="icon"><i class="fas fa-envelope"></i></label>
+                    <input  id="input-ongs" type="email" id="email" name="email" placeholder="email@email.com" required class="hide-placeholder">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="telefone">Telefone</label>
+                    <label for="telefone" class="icon"><i class="fas fa-phone"></i></label>
+                    <input id="input-ongs" type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required class="hide-placeholder" pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                    title="Digite um telefone válido (10 ou 11 dígitos numéricos)">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="endereco">Endereço</label>
+                    <label for="endereco" class="icon"><i class="fas fa-map-marker-alt"></i></label>
+                    <input id="input-ongs" type="text" id="endereco" name="endereco" placeholder="Rua Sao Jose,nº 125, Centro" required class="hide-placeholder">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="cep">CEP</label>
+                    <label for="cep" class="icon"><i class="fas fa-envelope"></i></label>
+                    <input id="input-ongs" type="text" id="cep" name="cep" placeholder="00000-000" required class="hide-placeholder" pattern="\d{5}-\d{3}" title="Digite um CEP válido (00000-000)">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="cidade">Cidade</label>
+                    <label for="cidade" class="icon"><i class="fas fa-city"></i></label>
+                    <input id="input-ongs" type="text" id="cidade" name="cidade" placeholder="Cidade da ONG" required class="hide-placeholder">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    
+                </div>
+
+                <button class="button-ongs" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+    <script src="../js/script.js"></script>
+    <script src="../js/cadastroOng.js"></script>
+    <script src="../js/searchOng.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+
+</html>

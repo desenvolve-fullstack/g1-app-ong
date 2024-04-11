@@ -1,0 +1,152 @@
+.container-ongs {
+    max-width: 100%;
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 20px; /* Adiciona um espaçamento nas laterais */
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh; /* Altere para um valor que atenda às suas necessidades */
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: var(--cor-fundo);
+
+}
+
+.conteudo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.h2-c {
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--cor-azul-primaria);
+    padding-top: 60px;
+    padding-bottom: 25px;
+}
+
+/* Estilo para o formulário */
+.formulario-wrapper {
+    max-width: 600px;
+    margin: 20px auto; /* Centralizar na horizontal */
+    padding: 20px;
+    background-color: var(--cor-laranja-opacity);
+    border: 1px solid var(--cor-da-borda-input);
+    border-radius: 12px;
+    
+}
+
+/* Layout do formulário */
+#form-cadastro {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna por padrão (mobile) */
+    grid-gap: 20px;
+ 
+   
+}
+/* Estilo para o ícone dentro do placeholder */
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 10px;
+    top: 65%;
+    transform: translateY(-50%);
+    color: var( --cor-placeholder);
+    transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+/* Estilo para o texto dos placeholders */
+.input-wrapper input::placeholder {
+    color: transparent; /* Torna o placeholder transparente */
+    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+}
+
+
+/* Estilo para ocultar o placeholder e o ícone quando o campo está em foco */
+.input-wrapper input.hide-placeholder::placeholder,
+.input-wrapper input.hide-placeholder + .icon {
+    color: var(--cor-placeholder); /* Torna o placeholder e o ícone transparentes quando a classe hide-placeholder está presente */
+}
+
+/* Estilo para manter o texto visível quando o campo está preenchido */
+.input-wrapper input.hide-placeholder:not(:placeholder-shown) {
+    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+}
+
+/* Ajuste para exibir o ícone corretamente alinhado com o texto */
+.input-wrapper input.hide-placeholder {
+    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+}
+
+
+
+
+/* Estilo para labels */
+label {
+    font-weight: bold;
+}
+
+/* Estilo para inputs, selects e textarea */
+#input-ongs[type="text"],
+#input-ongs[type="email"],
+#input-ongs[type="tel"],
+#input-ongs[type="cnpj"],
+#input-ongs[type="endereco"],
+#input-ongs[type="cep"],
+#input-ongst[type="cidade"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-da-borda-input);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: var(--font-principal);
+    
+    
+}
+
+select {
+    height: 40px;
+    color: var(--cor-placeholder);
+   
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Estilo para botão de submit */
+.button-ongs[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--cor-azul-primaria);
+    color: var(--cor-branco-extra-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+
+    
+}
+
+.button-ongs[type="submit"]:hover {
+    background-color: var(--cor-azul-dark-secondary);
+}
+
+/* Responsividade para desktop (maior que 768px) */
+@media (min-width: 768px) {
+    #form-cadastro {
+        grid-template-columns: repeat(2, 1fr); /* Dois inputs por linha no desktop */
+        justify-items: legacy; /* Alinha os itens à esquerda */
+      
+         
+        
+    }
+    button-ongs[type="submit"] {
+        grid-column: span 2; /* Ocupa duas colunas para ficar na linha completa */
+    }
+
+}

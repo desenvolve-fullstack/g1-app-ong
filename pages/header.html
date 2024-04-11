@@ -1,0 +1,97 @@
+
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <header class="cabecalho">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../img/logo.svg" alt="logo">
+            </div>
+        </header>
+        <!-- Sidebar Navigation -->
+        <ul class="sidebar-nav">
+       
+            
+            <!-- Itens do Menu -->
+            <li class="sidebar-item">
+                <a href="../index.html" class="sidebar-link collapsed">
+                    <i class="fas fa-home pe-2"></i> Home
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pedidos"
+                    aria-expanded="false" aria-controls="pedidos">
+                    <i class="far fa-list-alt pe-2"></i> Pedidos
+                </a>
+                <ul id="pedidos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="../pages/registroPedidos.html" class="sidebar-link-sub">Registro de Pedidos</a>
+                    </li>
+                </ul>
+                <ul id="pedidos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="../pages/listaPedidos.html" class="sidebar-link-sub">Lista de Pedidos</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#produtos"
+                    aria-expanded="false" aria-controls="produtos">
+                    <i class="fas fa-boxes pe-2"></i> Produtos
+                </a>
+                <ul id="produtos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="./pages/cadastroProdutos.html" class="sidebar-link-sub">Cadastro de Produtos</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../pages/produtos.html" class="sidebar-link-sub">Produtos Cadastrados</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../pages/registroDoacao.html" class="sidebar-link-sub">Registro de Doação</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../pages/estoque.html" class="sidebar-link-sub">Estoque</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#ongs"
+                    aria-expanded="false" aria-controls="ongs">
+                    <i class="far fa-user pe-2"></i> ONGs
+                </a>
+                <ul id="ongs" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="../pages/cadastroOngs.html" class="sidebar-link-sub">Cadastro de ONGs</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../pages/listaOngs.html" class="sidebar-link-sub">Lista de ONGs</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="social_media">
+            <ul>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </ul>
+        </div>
+       
+    <button id="closeSidebarBtn" class="close-btn">X</button>
+    </aside>
+
+    <header id="header"  >
+        <!-- Navegação -->
+        <nav class="navbar navbar-expand custom-navbar px-3 border-bottom">
+            <!-- Botão para expandir o sidebar -->
+            <button id="expandSidebarBtn" class="btn" type="button" data-bs-theme="white">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+         
+        </nav>
+        <!-- Fim da navegação -->
+    </header>
+    
+</div>

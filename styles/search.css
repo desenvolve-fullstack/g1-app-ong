@@ -1,0 +1,65 @@
+/* Estilos para o campo de pesquisa */
+.search-container {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-azul-primaria);
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Estilos para o campo de pesquisa */
+.search-input {
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+    background-color: var(--cor-borda-input);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Por padrão, use largura total */
+
+    /* Estilize o placeholder (texto de exemplo) do campo de pesquisa */
+    ::placeholder {
+        color: rgba(0, 0, 0, 0.5); /* Define a cor do texto do placeholder */
+    }
+
+    /* Estilos para o campo quando em foco */
+    &:focus {
+        outline: none; /* Remove a borda de foco padrão */
+        border-color: var(--cor-borda-input); /* Define a cor da borda quando em foco */
+        
+    }
+}
+
+/* Estilos para o botão de pesquisa */
+.search-button {
+    border: none;
+    background: var(--cor-azul-dark);
+    color: var(--cor-fundo-input);
+    cursor: pointer;
+    padding: 12px 20px; /* Ajuste o preenchimento para melhor proporção */
+    border-radius: 10px;
+    margin-left: 10px; /* Adicione um espaço entre o input e o botão */
+}
+
+/* Estilize o ícone dentro do botão de pesquisa */
+.search-button i {
+    font-size: 14px;
+}
+
+/* Aplique estilos quando o cursor passar sobre o botão */
+.search-button:hover {
+    background-color: var(--cor-laranja); /* Altere a cor de fundo ao passar o cursor */
+}
+
+/* Estilos para dispositivos desktop (largura mínima de 768px) */
+@media (min-width: 768px) {
+    .search-input {
+        width: 40%; /* Defina uma largura relativa para dispositivos desktop */
+        /* Ou use uma largura fixa, se preferir */
+        /* width: 200px; */
+    }
+}

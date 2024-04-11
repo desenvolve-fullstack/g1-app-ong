@@ -1,87 +1,184 @@
+/* Estilos para o cabeçalho */
 .cabecalho {
     background-color: var(--cor-laranja-opacity);
-    display: flex;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-    width: 20%;
-    justify-content: space-around;
-    padding-top: 8%; 
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    padding: 5%;
-}
-.container__botao{
-    display: none;
-}
-
-.opcoes__botao, .opcoes__botao__pedidos,
-.opcoes__botao__ongs, .opcoes__botao__produtos{
-    display: none;
-}
-
-.opcoes{
+    width: 100%;
+   /*  height: 25vh; */
     display: flex;
     flex-direction: column;
-    padding-bottom: 15%;
-    margin-top: 40%;
-    margin-bottom: 100%;
-}
-.opcoes__link {
-    text-decoration: none;
-    color: var(--preto);
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.opcoes__item__ongs, .opcoes__item__pedidos, .opcoes__item__produtos{
-    padding: 0 1em;
+
+
+/* Estilos para o título do cabeçalho */
+.cabecalho .navbar-brand {
+    font-size: 24px;
     color: var(--cor-azul-primaria);
-    font-size: 2em;
-    font-weight: 250;
 }
 
-.lista-menu, .lista-menu-pedidos,
-.lista-menu-ongs, .lista-menu-produtos{
-    display: none;
+/* Estilos para o botão do sidebar toggle */
+.cabecalho .navbar-toggler-icon {
+    font-size: 24px;
+    color: var(--cor-azul-primaria);
+    cursor: pointer;
 }
 
-.opcoes__botao__pedidos:checked~.lista-menu-pedidos,
-.opcoes__botao__ongs:checked~.lista-menu-ongs,
-.opcoes__botao__produtos:checked~.lista-menu-produtos{
-    display: block;
-    width: auto;
-}
-.opcoes__botao__produtos:checked~.opcoes__rotulo .opcoes__item__produtos,
-.opcoes__botao__ongs:checked~.opcoes__rotulo .opcoes__item__ongs,
-.opcoes__botao__pedidos:checked~.opcoes__rotulo .opcoes__item__pedidos{
-    color: var(--cor-azul-dark);
-    font-weight: 600;
-    width: auto;
-}
-.opcoes__rotulo{
-    padding: 1em;
+
+
+/* Estilos para o logo */
+.logo {
+    margin-bottom: 20px;
 }
 
-.lista-menu__link{
-    color: var(--cor-azul-dark-secondary);
-    margin-left: 3.2em;
-    text-decoration: none;
+.logo img {
+    width: 90px;
+    height: auto;
 }
-.lista-menu__item{
-    padding: 0.5em;
+
+.wrapper {
+    align-items: stretch;
     display: flex;
-    justify-content: flex-start;
-    width: auto;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.lista-menu__item:hover>.lista-menu__link {
-    text-decoration: none;
-} 
 
-.lista-menu__item:hover {
+
+
+
+/* Estilos para o sidebar */
+#sidebar {
+    width: 264px;
+    background-color: var(--cor-laranja-opacity);
+    box-shadow: 0 0 35px 0 rgba(49, 57, 66, 0.5);
+    z-index: 1111;
+    height: calc(150vh - 140px); 
+  
+    overflow-y: auto;
+}
+
+/* Sidebar collapse */
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* Estilos para os links da barra lateral */
+.sidebar-nav {
+    padding: 0;
+}
+
+.sidebar-link {
+    padding: 1.625rem 2.625rem;
+    color: var(--cor-azul-primaria);
+    position: relative;
+    display: block;
+    font-size: 1rem;
     font-weight: 600;
-    -webkit-text-fill-color: var(--cor-azul-dark);
+    text-decoration: none;
 }
 
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg); 
+    transition: all .2s ease-out; 
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cor-azul-dark-secondary);
+    position: relative;
+    display: block;
+    padding: 0.625rem 1.625rem;
+}
+
+.sidebar-item a.sidebar-link {
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.sidebar-item a.sidebar-link:hover {
+    border-color: var(--cor-azul-primaria);
+}
+
+/* Estilos para as redes sociais */
+.social_media {
+    margin-top: 20px;
+}
+
+.social_media ul {
+    padding: 20px;
+    list-style: none;
+}
+
+.social_media ul a {
+    color: var(--cor-azul-dark);
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+/* Estilos para o botão de fechar no sidebar */
+#closeSidebarBtn {
+    display: none ; /* Inicialmente oculto */
+    position: fixed;
+    top: 10px;
+    right: 180px;
+    z-index: 1000; /* Garante que fique acima do conteúdo do sidebar */
+    border: none;
+    background-color: var(--cor-azul-primaria);
+    width: 30px;
+    font-size: 20px;
+
+
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .close-sidebar-btn {
+        display: block; 
+    }
+    .sidebar {
+        width: 100%; 
+    }
+  
+}
+
+
+
+@media (min-width: 768px) {
+    .content {
+        width: auto;
+    }
+    #closeSidebarBtn {
+        display: none;
+    }
+    #header {
+        display: none;
+    }
+   
+}
+/* Responsividade para dispositivos com largura menor que 361px e altura menor que 668px */
+@media (max-width: 360px) and (max-height: 667px) {
+    #sidebar {
+        height: 100vh; /* Definir a altura como 100% da altura da viewport */
+    }
+ 
+}
