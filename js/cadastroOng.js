@@ -1,4 +1,5 @@
- // Arquivo: placeholder.js
+
+// Arquivo: placeholder.js
 document.addEventListener('DOMContentLoaded', () => {
     // Seleciona todos os inputs com a classe "hide-placeholder"
     const inputs = document.querySelectorAll('.hide-placeholder');
@@ -9,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Função para ocultar o placeholder e o ícone quando o input recebe foco
         const hidePlaceholderAndIcon = () => {
-            input.classList.remove('hide-placeholder'); 
+            input.classList.remove('hide-placeholder');
             if (iconLabel) {
-                iconLabel.style.color = 'transparent'; /
+                iconLabel.style.color = 'transparent';
             }
         };
 
@@ -19,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const showPlaceholderAndIcon = () => {
             // Verifica se o input está vazio ao perder o foco
             if (input.value === '') {
-                input.classList.add('hide-placeholder'); 
+                input.classList.add('hide-placeholder');
                 if (iconLabel) {
-                    iconLabel.style.color = getComputedStyle(input).getPropertyValue('--cor-placeholder'); 
+                    iconLabel.style.color = getComputedStyle(input).getPropertyValue('--cor-placeholder');
                 }
             }
         };
@@ -41,8 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// fazer a importaçao  das funções de validação
+// Importar as funções de validação
 import { validarCNPJ } from './validarCNPJ.js';
 import { validarTelefone } from './validarTelefone.js';
 import { validarCEP } from './validarCEP.js';
@@ -66,19 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validar Telefone
         if (!validarTelefone(telefoneInput.value)) {
             alert('Telefone inválido. Digite um telefone válido.');
-            event.preventDefault();     
+            event.preventDefault();
         }
 
         // Validar CEP
         if (!validarCEP(cepInput.value)) {
             alert('CEP inválido. Digite um CEP válido.');
-            event.preventDefault(); 
+            event.preventDefault();
         }
 
         // Validar Email
         if (!validarEmail(emailInput.value)) {
             alert('Email inválido. Digite um email válido.');
-            event.preventDefault();     
+            event.preventDefault();
         }
     });
 });
