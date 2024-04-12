@@ -1,111 +1,53 @@
+ // Arquivo: placeholder.js
 document.addEventListener('DOMContentLoaded', () => {
     // Seleciona todos os inputs com a classe "hide-placeholder"
     const inputs = document.querySelectorAll('.hide-placeholder');
 
     // Adiciona um ouvinte de eventos para cada input
     inputs.forEach(input => {
-        // Adiciona um ouvinte de evento para quando o input é clicado
-        input.addEventListener('focus', () => {
-            // Remove a classe "hide-placeholder" para exibir o placeholder quando o input é clicado
-            input.classList.remove('hide-placeholder');
-            // Seleciona o ícone associado ao input
-            const icon = input.parentElement.querySelector('.icon');
-            // Define a cor do ícone para transparente
-            icon.style.color = 'transparent';
-        });
+        const iconLabel = input.parentElement.querySelector('.icon');
 
-        // Adiciona um ouvinte de evento para quando o input perde o foco
-        input.addEventListener('blur', () => {
+        // Função para ocultar o placeholder e o ícone quando o input recebe foco
+        const hidePlaceholderAndIcon = () => {
+            input.classList.remove('hide-placeholder'); 
+            if (iconLabel) {
+                iconLabel.style.color = 'transparent'; /
+            }
+        };
+
+        // Função para verificar se o placeholder e o ícone devem ser mostrados ao perder o foco
+        const showPlaceholderAndIcon = () => {
             // Verifica se o input está vazio ao perder o foco
             if (input.value === '') {
-                // Adiciona a classe "hide-placeholder" de volta para ocultar o placeholder se o input estiver vazio
-                input.classList.add('hide-placeholder');
-                // Seleciona o ícone associado ao input
-                const icon = input.parentElement.querySelector('.icon');
-                // Define a cor do ícone para a cor do placeholder
-                icon.style.color = getComputedStyle(input).getPropertyValue('--cor-placeholder');
+                input.classList.add('hide-placeholder'); 
+                if (iconLabel) {
+                    iconLabel.style.color = getComputedStyle(input).getPropertyValue('--cor-placeholder'); 
+                }
             }
-        });
+        };
 
-        // Oculta o placeholder ao carregar a página (adicionando a classe "hide-placeholder")
-        input.classList.add('hide-placeholder');
+        // Adiciona um ouvinte de evento para quando o input é clicado
+        input.addEventListener('focus', hidePlaceholderAndIcon);
+
+        // Adiciona um ouvinte de evento para quando o input perde o foco
+        input.addEventListener('blur', showPlaceholderAndIcon);
+
+        // Verifica se o input já possui valor ao carregar a página
+        if (input.value !== '') {
+            hidePlaceholderAndIcon(); // Chama a função para mostrar o placeholder e ocultar o ícone inicialmente se o campo já estiver preenchido
+        } else {
+            showPlaceholderAndIcon(); // Chama a função para ocultar o placeholder e mostrar o ícone se o campo estiver vazio inicialmente
+        }
     });
 });
 
 
-//validaçoes 
-//CNPJ
-function validarCNPJ(cnpj) {
-    const cnpjNumerico = cnpj.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
+// fazer a importaçao  das funções de validação
+import { validarCNPJ } from './validarCNPJ.js';
+import { validarTelefone } from './validarTelefone.js';
+import { validarCEP } from './validarCEP.js';
+import { validarEmail } from './validarEmail.js';
 
-    if (cnpjNumerico.length !== 14) {
-        return false; // Deve ter 14 dígitos
-    }
-
-    // Verifica se todos os dígitos são iguais (ex: 11.111.111/1111-11)
-    if (/^(\d)\1+$/.test(cnpjNumerico)) {
-        return false;
-    }
-
-    // Calcula o primeiro dígito verificador
-    let soma = 0;
-    let peso = 5;
-    for (let i = 0; i < 12; i++) {
-        soma += parseInt(cnpjNumerico.charAt(i)) * peso--;
-        if (peso < 2) {
-            peso = 9;
-        }
-    }
-
-    let digito = 11 - (soma % 11);
-    if (digito > 9) {
-        digito = 0;
-    }
-
-    // Verifica o primeiro dígito verificador
-    if (parseInt(cnpjNumerico.charAt(12)) !== digito) {
-        return false;
-    }
-
-    // Calcula o segundo dígito verificador
-    soma = 0;
-    peso = 6;
-    for (let i = 0; i < 13; i++) {
-        soma += parseInt(cnpjNumerico.charAt(i)) * peso--;
-        if (peso < 2) {
-            peso = 9;
-        }
-    }
-
-    digito = 11 - (soma % 11);
-    if (digito > 9) {
-        digito = 0;
-    }
-
-    // Verifica o segundo dígito verificador
-    if (parseInt(cnpjNumerico.charAt(13)) !== digito) {
-        return false;
-    }
-
-    return true; // CNPJ válido
-}
-
-//Telefone
-function validarTelefone(telefone) {
-    return /^\(\d{2}\) \d{4,5}-\d{4}$/.test(telefone);
-}
-
-// CEP
-function validarCEP(cep) {
-    return /^\d{5}-\d{3}$/.test(cep);
-}
-
-// Email
-function validarEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-//Validação ao Formulário
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
 
@@ -115,26 +57,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const cepInput = form.querySelector('#cep');
         const emailInput = form.querySelector('#email');
 
+        // Validar CNPJ
         if (!validarCNPJ(cnpjInput.value)) {
             alert('CNPJ inválido. Digite um CNPJ válido.');
-            event.preventDefault();
+            event.preventDefault(); // Impede o envio do formulário
         }
 
+        // Validar Telefone
         if (!validarTelefone(telefoneInput.value)) {
             alert('Telefone inválido. Digite um telefone válido.');
-            event.preventDefault();
+            event.preventDefault();     
         }
 
+        // Validar CEP
         if (!validarCEP(cepInput.value)) {
             alert('CEP inválido. Digite um CEP válido.');
-            event.preventDefault();
+            event.preventDefault(); 
         }
 
+        // Validar Email
         if (!validarEmail(emailInput.value)) {
             alert('Email inválido. Digite um email válido.');
-            event.preventDefault();
+            event.preventDefault();     
         }
     });
 });
- 
-
