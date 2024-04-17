@@ -1,10 +1,10 @@
 .container-ongs {
     max-width: 100%;
-    margin: 0 auto; /* Centraliza o conteúdo */
-    padding: 0 20px; /* Adiciona um espaçamento nas laterais */
+    margin: 0 auto; 
+    padding: 0 20px; 
     display: flex;
     flex-direction: column;
-    min-height: 25vh; /* Altere para um valor que atenda às suas necessidades */
+    min-height: 25vh; 
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
@@ -27,7 +27,7 @@
 /* Estilo para o formulário */
 .formulario-wrapper {
     max-width: 600px;
-    margin: 20px auto; /* Centralizar na horizontal */
+    margin: 20px auto; 
     padding: 20px;
     background-color: var(--cor-laranja-opacity);
     border: 1px solid var(--cor-da-borda-input);
@@ -38,7 +38,7 @@
 /* Layout do formulário */
 #form-cadastro {
     display: grid;
-    grid-template-columns: 1fr; /* Uma coluna por padrão (mobile) */
+    grid-template-columns: 1fr; 
     grid-gap: 20px;
  
    
@@ -54,30 +54,30 @@
     top: 65%;
     transform: translateY(-50%);
     color: var( --cor-placeholder);
-    transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+    transition: color 0.3s ease;  
 }
 
 /* Estilo para o texto dos placeholders */
 .input-wrapper input::placeholder {
-    color: transparent; /* Torna o placeholder transparente */
-    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+    color: transparent;  
+    padding-left: 30px;  
 }
 
 
 /* Estilo para ocultar o placeholder e o ícone quando o campo está em foco */
 .input-wrapper input.hide-placeholder::placeholder,
 .input-wrapper input.hide-placeholder + .icon {
-    color: var(--cor-placeholder); /* Torna o placeholder e o ícone transparentes quando a classe hide-placeholder está presente */
+    color: var(--cor-placeholder); 
 }
 
 /* Estilo para manter o texto visível quando o campo está preenchido */
 .input-wrapper input.hide-placeholder:not(:placeholder-shown) {
-    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+    padding-left: 30px; 
 }
 
 /* Ajuste para exibir o ícone corretamente alinhado com o texto */
 .input-wrapper input.hide-placeholder {
-    padding-left: 30px; /* Ajusta o espaçamento à direita do ícone */
+    padding-left: 30px;  
 }
 
 
@@ -139,14 +139,14 @@ textarea {
 /* Responsividade para desktop (maior que 768px) */
 @media (min-width: 768px) {
     #form-cadastro {
-        grid-template-columns: repeat(2, 1fr); /* Dois inputs por linha no desktop */
-        justify-items: legacy; /* Alinha os itens à esquerda */
+        grid-template-columns: repeat(2, 1fr); 
+        justify-items: legacy; 
       
          
         
     }
     button-ongs[type="submit"] {
-        grid-column: span 2; /* Ocupa duas colunas para ficar na linha completa */
+        grid-column: span 2; 
     }
 
 }

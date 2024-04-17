@@ -1,4 +1,4 @@
-       function CadastrarProduto() {
+       function cadastrarProduto() {
             var form = document.getElementById("cadastroForm");
             if (form.checkValidity()) {
                 var produtoInput = document.getElementById("produtoInput").value;
@@ -12,7 +12,7 @@
             }
         }
 
-        function LimparFormulario() {
+        function limparFormulario() {
             document.getElementById("produtoInput").value = "";
             document.getElementById("unidadeInput").value = "";
         }

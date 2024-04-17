@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
     const headerContainer = document.getElementById('header-container');
@@ -9,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerUrl = '../pages/header.html';
     const searchBarUrl = '../pages/search.html';
 
-    // Função para carregar um componente HTML de um URL e inserir no contêiner especificado
+   
     function loadComponent(url, container) {
         fetch(url)
             .then(response => {
@@ -19,12 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.text();
             })
             .then(html => {
-                if (container) { // Verifica se o contêiner existe antes de modificar o innerHTML
+                if (container) {  
                     container.innerHTML = html;
 
-                    // Executar código específico do componente carregado (se necessário)
+                   
                     if (container === headerContainer) {
-                        setupHeader(); // Configurar funcionalidades do cabeçalho após carregar
+                        setupHeader(); 
                     }
                 } else {
                     console.error(`Elemento container não encontrado para o URL ${url}`);
